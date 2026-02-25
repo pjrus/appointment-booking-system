@@ -119,9 +119,12 @@ You can run MongoDB directly on your machine. Depending on your operating system
 4. In the project settings, configure the environment variables by adding your `MONGODB_URI`.
 5. Deploy the application. Vercel will automatically build and host your Next.js project.
 
+## AI Usage Acknowledgment
+This project was originally developed in PHP as part of my VCE Software Development Project. The migration from PHP to a modern Next.js/TypeScript stack was undertaken with the assistance of AI-powered coding tools. AI was used to accelerate the rewrite process, including scaffolding components, generating boilerplate, implementing the role-based authentication system, and applying consistent dark mode styling across the application. All AI-generated code was reviewed, understood, and adapted to fit the project's architecture and requirements.
+
 ## Future Improvements & Learning
 
-- [ ] Add robust user authentication and role-based access
+- [x] Add robust user authentication and role-based access
 - [ ] Automate `.ics` calendar generation and email confirmations for clients
 - [ ] Implement recurring appointment support
 - [ ] Add analytics dashboard for practitioners

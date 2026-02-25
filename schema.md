@@ -57,3 +57,23 @@ Global configurations for the clinic, manageable by administrators.
 | `daysOfWeekAllowed`| String | Yes | No | - | Comma-separated list of days the clinic is open. `0` = Sunday, `6` = Saturday (e.g., `"1,2,3,4,5"` for Mon-Fri) |
 | `createdAt` | Date | Auto | - | - | Timestamp of when settings were created |
 | `updatedAt` | Date | Auto | - | - | Timestamp of the last settings modification |
+
+---
+
+## 4. User Schema (`User`)
+
+Stores authentication credentials and role information for all system users (admins, practitioners, and patients). Added as part of the role-based login system.
+
+| Field | Type | Required | Unique | Index | Default | Description |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| `email` | String | Yes | Yes | Yes | - | Login identifier / contact email |
+| `password` | String | Yes | No | No | - | bcrypt-hashed password (never stored in plaintext) |
+| `role` | String | Yes | No | No | `patient` | User role: `admin`, `practitioner`, or `patient` |
+| `firstName` | String | Yes | No | No | - | User's first name |
+| `lastName` | String | Yes | No | No | - | User's last name |
+| `phoneNo` | String | No | No | No | - | Contact phone number |
+| `doctorId` | ObjectId | No | No | No | - | Reference to `Doctor` collection (only for practitioner role) |
+| `isApproved` | Boolean | No | No | No | `true` | Whether the user is approved; `false` for pending practitioner promotions |
+| `needsPasswordReset` | Boolean | No | No | No | `false` | `true` for auto-created accounts from guest bookings |
+| `createdAt` | Date | Auto | - | - | - | Timestamp of when the user was created |
+| `updatedAt` | Date | Auto | - | - | - | Timestamp of the last user modification |

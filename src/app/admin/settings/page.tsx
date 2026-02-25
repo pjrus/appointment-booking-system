@@ -1,3 +1,7 @@
+// System Settings page. Provides administrators with a form to configure global
+// clinic parameters: business email, default consultation cost, appointment slot
+// interval (minutes), online/offline locations, and allowed days of the week.
+// Settings are stored as a single document via the /api/settings endpoint (upsert).
 'use client';
 
 import { useState, useEffect } from 'react';

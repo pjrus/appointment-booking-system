@@ -1,3 +1,7 @@
+// Manage Practitioners page. Allows administrators to add new practitioner
+// profiles (title, first name, last name, phone, specialisation) and view the
+// current roster. Each practitioner can be deleted from the list. Data is
+// persisted via the /api/doctors endpoint.
 'use client';
 
 import { useState, useEffect } from 'react';

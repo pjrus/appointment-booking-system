@@ -1,4 +1,8 @@
+// Theme toggle button component. Renders a Sun or Moon icon depending on the
+// current colour scheme. Uses a mounted state check to avoid hydration mismatches
+// between server-rendered and client-rendered content.
 'use client';
+
 
 import * as React from 'react';
 import { Moon, Sun } from 'lucide-react';

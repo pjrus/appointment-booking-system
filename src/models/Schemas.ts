@@ -90,3 +90,36 @@ const SettingsSchema: Schema = new Schema({
 }, { timestamps: true });
 
 export const Settings: Model<ISettings> = mongoose.models.Settings || mongoose.model<ISettings>('Settings', SettingsSchema);
+
+
+// --- User Schema (Authentication) ---
+export interface IUser extends Document {
+  email: string;
+  password: string;           // bcrypt hash
+  role: 'admin' | 'practitioner' | 'patient';
+  firstName: string;
+  lastName: string;
+  phoneNo?: string;
+  doctorId?: mongoose.Types.ObjectId;   // links practitioner users to their Doctor record
+  isApproved: boolean;                  // true for patients, false until admin promotes to practitioner
+  needsPasswordReset?: boolean;         // true for auto-created accounts (guest bookings)
+}
+
+const UserSchema: Schema = new Schema({
+  email: { type: String, required: true, unique: true, index: true },
+  password: { type: String, required: true },
+  role: {
+    type: String,
+    enum: ['admin', 'practitioner', 'patient'],
+    required: true,
+    default: 'patient',
+  },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  phoneNo: { type: String },
+  doctorId: { type: Schema.Types.ObjectId, ref: 'Doctor' },
+  isApproved: { type: Boolean, default: true },
+  needsPasswordReset: { type: Boolean, default: false },
+}, { timestamps: true });
+
+export const User: Model<IUser> = mongoose.models.User || mongoose.model<IUser>('User', UserSchema);

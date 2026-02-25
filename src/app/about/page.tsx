@@ -1,3 +1,6 @@
+// About page. Provides background information on the Clinic Appointments project,
+// including its history as a VCE Software Development Project rewritten from PHP
+// to a modern Next.js stack, and highlights the application's key features.
 import React from 'react';
 
 export default function AboutPage() {

@@ -1,3 +1,8 @@
+// Booking page. Implements a multi-step form for patients to schedule a new
+// consultation. Steps include: selecting a practitioner, choosing an appointment
+// type, picking a date and available time slot, filling in patient details, and
+// confirming the booking. Communicates with the /api/appointments and
+// /api/appointments/slots endpoints to validate availability and submit bookings.
 'use client';
 
 import { useState, useEffect } from 'react';
