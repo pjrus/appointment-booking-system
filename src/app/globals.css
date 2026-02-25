@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-white dark:bg-zinc-950 text-black dark:text-white;
+  }
+}
+
+@layer components {
+  /* Classic Styles Ported */
+  .item-container {
+    @apply grid grid-cols-[16rem_16rem] m-0;
+  }
+
+  .v-flex-container {
+    @apply flex flex-col gap-5;
+  }
+
+  .time-taken {
+    @apply text-red-600 font-bold;
+  }
+
+  /* We'll use Tailwind utilities for mostly everything else to keep it clean, 
+     but keeping these classic names helps bridge the gap */
+}
