@@ -1,3 +1,8 @@
+// Available time slots API route. Handles POST requests to generate a list of
+// bookable time slots for a given practitioner on a given date. Slots are generated
+// at intervals defined by the global apptSlotInterval setting, within hardcoded
+// operating hours (09:00–20:00). Each slot is checked against existing appointments
+// using overlap logic to determine availability.
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import { Appointment, Settings } from '@/models/Schemas';

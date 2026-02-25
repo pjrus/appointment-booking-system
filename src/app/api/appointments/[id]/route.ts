@@ -1,3 +1,6 @@
+// Individual appointment API route. Handles DELETE to remove a specific appointment
+// by its MongoDB ObjectId. Currently performs a direct deletion; a future enhancement
+// could implement soft-deletes or check appointment status before allowing removal.
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import { Appointment } from '@/models/Schemas';

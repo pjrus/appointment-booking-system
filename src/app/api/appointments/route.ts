@@ -1,3 +1,8 @@
+// Appointments API route. Handles GET (list all appointments with populated doctor
+// details, sorted by date) and POST (create a new booking with double-booking
+// overlap protection, automatic end-time calculation, and default cost fallback
+// from global settings). The overlap logic rejects slots where the proposed
+// appointment's time range intersects with any existing booking for the same practitioner.
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import { Appointment, Settings } from '@/models/Schemas';

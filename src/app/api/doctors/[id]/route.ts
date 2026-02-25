@@ -1,3 +1,7 @@
+// Individual practitioner API route. Handles DELETE to remove a specific doctor
+// record by its MongoDB ObjectId. Mimics the original PHP system's behaviour
+// with a direct deletion; a future enhancement should verify that the practitioner
+// has no upcoming or unfinalised appointments before authorising removal.
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import { Doctor } from '@/models/Schemas';

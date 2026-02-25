@@ -1,3 +1,8 @@
+// Mongoose schema definitions for the Clinic Appointment System's MongoDB database.
+// Defines four collections: Doctor (practitioner profiles), Appointment (booking
+// records with patient details, billing, and overlap-safe time slots), Settings
+// (global clinic configuration), and User (authentication with role-based access,
+// bcrypt-hashed passwords, and practitioner-to-doctor linking via doctorId).
 import mongoose, { Document, Model, Schema } from 'mongoose';
 
 // --- Doctor Schema ---

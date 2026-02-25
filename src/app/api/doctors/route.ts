@@ -1,3 +1,6 @@
+// Practitioners API route. Handles GET (retrieve all doctor profiles for the admin
+// roster and booking forms) and POST (create a new practitioner record with details
+// such as title, name, phone, and specialisation).
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import { Doctor } from '@/models/Schemas';

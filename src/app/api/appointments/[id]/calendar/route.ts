@@ -1,3 +1,7 @@
+// Calendar export API route. Generates and serves a downloadable .ics (iCalendar)
+// file for a given appointment. The file includes the consultation summary, patient
+// details, and event times set to the Australia/Melbourne timezone for compatibility
+// with Apple Calendar and Google Calendar.
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import { Appointment } from '@/models/Schemas';

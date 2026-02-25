@@ -1,3 +1,7 @@
+// Global settings API route. Handles GET (retrieve the single clinic configuration
+// document) and PUT (update or create the settings using upsert behaviour). Settings
+// control clinic-wide parameters such as default cost, slot interval, locations,
+// and allowed operating days.
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import { Settings } from '@/models/Schemas';
